@@ -1,7 +1,27 @@
-def solution(s):
-    answer = True
-    
-    # [실행] 버튼을 누르면 출력 값을 볼 수 있습니다.
-    print('Hello Python')
+# def solution(s):
+#     stack = [0] * len(s)
+#     top = -1
+#     for c in s:
+#         if c == '(':
+#             top += 1
+#             stack.append(c)
+#         elif c == ')':
+#             if top == -1:
+#                 return False
+#             stack[top] = None
+#             top -= 1
+#     return top == -1
 
-    return True
+def solution(s):
+    st = list()
+    for c in s:
+        if c == '(':
+            st.append(c)
+
+        if c == ')':
+            try:
+                st.pop()
+            except IndexError:
+                return False
+
+    return len(st) == 0
