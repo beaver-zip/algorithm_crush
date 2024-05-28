@@ -1,6 +1,9 @@
+import sys
+input = sys.stdin.readline
+
 arr = []
 for i in range(int(input())):
-    x, y = map(int, input().split())
+    x, y = map(int, input().rstrip().split())
     arr.append((x, y))
 
 arr.sort(key = lambda a: a[0])
